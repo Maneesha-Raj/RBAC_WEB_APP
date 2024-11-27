@@ -6,7 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  // Fetch users from the backend
+ 
   useEffect(() => {
     fetch('/api/users')
       .then((res) => res.json())

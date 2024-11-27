@@ -8,12 +8,13 @@ import Sidebar from "../components/Sidebar";
 import Dashboard from "../components/Dashboard";
 import AddUserModal from "../components/AddUserModal";
 import UserTable from "../components/UserTable";
+import SearchUser from "../components/SearchUser";
 
 const Adminhomepage = () => {
   const [activeView, setActiveView] = useState("dashboard");
   const [userCount, setUserCount] = useState(0);
 
-  // Fetch the user count when the component loads
+ 
   useEffect(() => {
     fetchUserCount();
   }, []);
@@ -37,9 +38,9 @@ const Adminhomepage = () => {
           />
         );
       case "viewUsers":
-        return <div><UserTable setActiveView={setActiveView} /></div>; // Placeholder for View Users
+        return <div><UserTable setActiveView={setActiveView} /></div>; 
       case "searchUsers":
-        return <div>Search Users Page</div>; // Placeholder for Search Users
+        return <div><SearchUser setActiveView={setActiveView} /></div>; 
       default:
         return <Dashboard userCount={userCount} />;
     }
@@ -48,9 +49,9 @@ const Adminhomepage = () => {
   return (
     <>
       <div className="flex h-screen bg-gray-100">
-        {/* Sidebar */}
+       
         <Sidebar setActiveView={setActiveView} />
-        {/* Main Content */}
+        
         <div className="w-4/5">{renderView()}</div>
       </div>
     </>
@@ -65,67 +66,3 @@ export default Adminhomepage;
 
 //---------------------------------------------------------------------------
 
-
-// import React, { useState } from "react";
-// import Sidebar from "../components/Sidebar";
-// import Dashboard from "../components/Dashboard";
-// import AddUserModal from "../components/AddUserModal";
-
-// const Adminhomepage = () => {
-//   const [activeView, setActiveView] = useState("dashboard");
-
-//   const renderView = () => {
-//     switch (activeView) {
-//       case "addUser":
-//         return <AddUserModal />;
-//       case "viewUsers":
-//         return <div>View Users Page</div>; // Placeholder for View Users
-//       case "searchUsers":
-//         return <div>Search Users Page</div>; // Placeholder for Search Users
-//       default:
-//         return <Dashboard />;
-//     }
-//   };
-
-//   return (
-//     <>
-//       <div className="flex h-screen bg-gray-100">
-//         {/* Sidebar */}
-//         <Sidebar setActiveView={setActiveView} />
-//         {/* Main Content */}
-//         <div className="w-4/5">{renderView()}</div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Adminhomepage;
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------
-
-// import React from 'react'
-// import Dashboard from '../components/Dashboard'
-// import Sidebar from '../components/Sidebar'
-
-// const Adminhomepage = () => {
-//   return (
-//     <>
-//         <div className="flex h-screen bg-gray-100">
-//           {/* Sidebar */}
-//           <Sidebar />
-//           {/* Main Content */}
-//           <Dashboard />
-//         </div>
-
-
-
-//     </>
-//   )
-// }
-
-// export default Adminhomepage
