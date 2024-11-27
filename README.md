@@ -35,8 +35,7 @@
 ### **Database:**
 - MongoDB
 
-### **Containerization:**
-- Docker (Optional for deployment)
+
 
 ---
 
@@ -78,7 +77,7 @@
 ## 🚀 GETTING STARTED
 
 ### **Prerequisites**
-1. Install Node.js and Docker (optional for containerization).
+1. Install Node.js.
 2. Ensure MongoDB is installed and running locally or use a cloud instance.
 
 ### **Setup Steps**
