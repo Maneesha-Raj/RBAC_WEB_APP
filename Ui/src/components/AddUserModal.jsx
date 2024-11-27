@@ -4,6 +4,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { toast } from 'react-toastify';
 
 const AddUserModal = ({ refreshUserCount }) => {
   const [name, setName] = useState("");
@@ -23,7 +24,8 @@ const AddUserModal = ({ refreshUserCount }) => {
         // Refresh user count
         refreshUserCount();
         // Redirect back to the dashboard after user is added
-        navigate("/admin-home"); // This will navigate to the '/dashboard' route
+        toast.success('User added successfully')
+        navigate('/admin-home'); // This will navigate to the '/dashboard' route
       })
       .catch((err) => console.error(err));
   };

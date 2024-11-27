@@ -7,6 +7,7 @@ import Loginpage from './pages/Loginpage'
 import Adminhomepage from './pages/Adminhomepage'
 import MainLayout from "./Layout/MainLayout"
 import AuthLayout from "./Layout/AuthLayout"
+import UserTable from "./components/UserTable"
 
 
 
@@ -21,7 +22,7 @@ function App() {
                   <Route path="/" element={<Indexpage />} /> 
                   <Route path="/login" element={<Loginpage />} />
                   <Route path="/sign-up" element={<Signuppage />} />
-                  /<Route path="/admin-home" element={<Adminhomepage/>} />
+                  <Route path="/admin-home" element={<Adminhomepage/>} />
                 
 
             </Route>
@@ -31,6 +32,7 @@ function App() {
                   <Route path="/sign-up" element={<Signuppage />} />
                   <Route path="/login" element={<Loginpage />} /> 
                   <Route path="/admin-home" element={<Adminhomepage />} />
+                  <Route path="/user-table" element={<UserTable />} />
                   
             </Route>
         </>

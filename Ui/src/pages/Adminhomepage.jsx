@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import Dashboard from "../components/Dashboard";
 import AddUserModal from "../components/AddUserModal";
+import UserTable from "../components/UserTable";
 
 const Adminhomepage = () => {
   const [activeView, setActiveView] = useState("dashboard");
@@ -18,7 +19,7 @@ const Adminhomepage = () => {
   }, []);
 
   const fetchUserCount = () => {
-    fetch("http://localhost:5000/api/users")
+    fetch("/api/users")
       .then((res) => res.json())
       .then((data) => {
         setUserCount(data.length);
@@ -36,7 +37,7 @@ const Adminhomepage = () => {
           />
         );
       case "viewUsers":
-        return <div>View Users Page</div>; // Placeholder for View Users
+        return <div><UserTable setActiveView={setActiveView} /></div>; // Placeholder for View Users
       case "searchUsers":
         return <div>Search Users Page</div>; // Placeholder for Search Users
       default:
