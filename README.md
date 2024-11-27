@@ -85,5 +85,5 @@
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
+   git clone (https://github.com/Maneesha-Raj/RBAC_WEB_APP.git)
    cd RBAC_UI
